@@ -1,27 +1,18 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import BitcoinGraph from "./quartz/components/BitcoinGraph"
 
 const githubRepo = process.env.GITHUB_REPOSITORY
 const githubUrl = githubRepo ? `https://github.com/${githubRepo}` : "https://github.com/jackyzha0/quartz"
-const graphPanel = Component.Graph({
+const graphPanel = BitcoinGraph({
   localGraph: {
-    depth: 2,
-    scale: 1.22,
-    repelForce: 0.62,
-    centerForce: 0.25,
-    linkDistance: 42,
-    fontSize: 0.78,
-    opacityScale: 1.15,
-    showTags: false,
-    focusOnHover: true,
-  },
-  globalGraph: {
-    scale: 1.02,
-    repelForce: 0.58,
-    centerForce: 0.18,
-    linkDistance: 44,
-    fontSize: 0.78,
-    opacityScale: 1.15,
+    depth: 1,
+    scale: 1.34,
+    repelForce: 2.1,
+    centerForce: 0.05,
+    linkDistance: 122,
+    fontSize: 0.9,
+    opacityScale: 1.28,
     showTags: false,
     focusOnHover: true,
   },
