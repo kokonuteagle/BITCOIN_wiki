@@ -1,6 +1,7 @@
 :root {
   --page-radius: 28px;
   --card-radius: 20px;
+  --rail-top-offset: clamp(2rem, 2.1vw + 0.75rem, 3rem);
   --shadow-soft: 0 26px 60px rgba(36, 23, 8, 0.16);
   --shadow-soft-dark: 0 30px 76px rgba(0, 0, 0, 0.44);
   --border-subtle: 1px solid color-mix(in srgb, var(--secondary) 14%, var(--lightgray));
@@ -71,16 +72,46 @@ body[saved-theme="dark"]::before {
 }
 
 .page > #quartz-body .sidebar {
+  display: flex;
+  position: sticky;
+  top: 0;
   align-self: start;
+  box-sizing: border-box;
+  gap: 1rem;
+  padding: var(--rail-top-offset) 0 1.25rem;
+  height: 100vh;
 }
 
 .page > #quartz-body .sidebar.left,
 .page > #quartz-body .sidebar.right {
-  padding-top: 4.75rem;
+  flex-direction: column;
 }
 
 .page > #quartz-body .sidebar.left {
   max-width: 16.75rem;
+}
+
+.page > #quartz-body .sidebar.left .page-title {
+  margin: 0;
+}
+
+.page > #quartz-body .sidebar.left .flex-component {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem !important;
+}
+
+.page > #quartz-body .sidebar.left .search {
+  width: 100%;
+  max-width: none;
+}
+
+.page > #quartz-body .sidebar.left .search-button {
+  width: 100%;
+}
+
+.page > #quartz-body .page-header {
+  margin-top: var(--rail-top-offset);
 }
 
 .page > #quartz-body .sidebar.left > *,
@@ -248,7 +279,7 @@ body[saved-theme="dark"] .popover {
   flex: 1 1 auto;
   height: clamp(29rem, 58vh, 43rem);
   min-height: clamp(29rem, 58vh, 43rem);
-  margin-top: 0.9rem;
+  margin-top: 0.55rem;
   border-radius: calc(var(--card-radius) - 2px);
   border: 1px solid var(--panel-line);
   background:
@@ -374,9 +405,15 @@ img {
     max-width: calc(100vw - 0.6rem);
   }
 
+  .page > #quartz-body .sidebar {
+    position: static;
+    height: auto;
+    padding: 0;
+  }
+
   .page > #quartz-body .sidebar.left,
   .page > #quartz-body .sidebar.right {
-    padding-top: 0;
+    flex-direction: column;
   }
 
   article {
