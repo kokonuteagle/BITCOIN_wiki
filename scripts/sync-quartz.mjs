@@ -22,13 +22,10 @@ copyRecursive(CONTENT_DIR, targetContent)
 const targetConfig = path.join(ENGINE_DIR, "quartz.config.ts")
 const targetLayout = path.join(ENGINE_DIR, "quartz.layout.ts")
 const targetCustomScss = path.join(ENGINE_DIR, "quartz", "styles", "custom.scss")
-const targetBitcoinGraph = path.join(ENGINE_DIR, "quartz", "components", "BitcoinGraph.tsx")
 
 copyRecursive(path.join(OVERRIDES_DIR, "quartz.config.ts"), targetConfig)
 copyRecursive(path.join(OVERRIDES_DIR, "quartz.layout.ts"), targetLayout)
 ensureDir(path.dirname(targetCustomScss))
 copyRecursive(path.join(OVERRIDES_DIR, "quartz", "styles", "custom.scss"), targetCustomScss)
-ensureDir(path.dirname(targetBitcoinGraph))
-copyRecursive(path.join(OVERRIDES_DIR, "quartz", "components", "BitcoinGraph.tsx"), targetBitcoinGraph)
 
 console.log("Quartz sync complete.")
