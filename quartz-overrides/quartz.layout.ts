@@ -3,6 +3,29 @@ import * as Component from "./quartz/components"
 
 const githubRepo = process.env.GITHUB_REPOSITORY
 const githubUrl = githubRepo ? `https://github.com/${githubRepo}` : "https://github.com/jackyzha0/quartz"
+const graphPanel = Component.Graph({
+  localGraph: {
+    depth: 2,
+    scale: 1.22,
+    repelForce: 0.62,
+    centerForce: 0.25,
+    linkDistance: 42,
+    fontSize: 0.78,
+    opacityScale: 1.15,
+    showTags: false,
+    focusOnHover: true,
+  },
+  globalGraph: {
+    scale: 1.02,
+    repelForce: 0.58,
+    centerForce: 0.18,
+    linkDistance: 44,
+    fontSize: 0.78,
+    opacityScale: 1.15,
+    showTags: false,
+    focusOnHover: true,
+  },
+})
 
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -40,7 +63,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    graphPanel,
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -60,5 +83,5 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer(),
   ],
-  right: [Component.Graph(), Component.DesktopOnly(Component.TableOfContents()), Component.Backlinks()],
+  right: [graphPanel, Component.DesktopOnly(Component.TableOfContents()), Component.Backlinks()],
 }
