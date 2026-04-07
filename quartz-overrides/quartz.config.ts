@@ -11,12 +11,12 @@ const inferredBaseUrl = process.env.QUARTZ_BASE_URL
     ? isUserPage
       ? `${owner}.github.io`
       : `${owner}.github.io/${repo}`
-    : "example.github.io/bitcoin-monolith-quartz"
+    : "example.github.io/bitcoin-wiki"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "비트코인 모노리스",
-    pageTitleSuffix: " · Bitcoin Monolith",
+    pageTitle: "비트코인 위키",
+    pageTitleSuffix: " · Bitcoin Wiki",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,

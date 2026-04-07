@@ -1,4 +1,4 @@
-# 비트코인 모노리스 · Bitcoin Monolith Quartz Vault
+# 비트코인 위키 · Bitcoin Wiki Quartz Vault
 
 이 저장소는 **비트코인 단일 주제 위키**다. 목표는 세 가지를 동시에 만족시키는 것이다.
 
